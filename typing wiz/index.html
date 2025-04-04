@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypingWizard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <h1 id="gameTitle">TypingWizard</h1>
+    <div id="gameContainer"> <!-- Wrapper for all game elements -->
+        <div class="wave"></div> <!--  Used for visual effects, styled in CSS -->
+        <div class="wave"></div> <!-- Duplicate for wave animation -->
+        <div id="score" class="hidden">Score: 0</div> <!-- Score display -->
+        <div id="missed" class="hidden">Missed: 0 </div>
+        <div id="highScore" class="hidden">High Score: 0</div>
+        <input type="text" id="inputField" autofocus style="opacity: 0; position: absolute;"> <!-- Input for typing, hidden initially -->
+        <div id="gameOver" class="hidden">
+            <div id="highScoreOver" class="hidden">High Score: 0</div>
+            <h1>Game <br> Over!<h1>
+            <br>
+            <button id="restartButton">Restart</button></div>  <!-- Button to restart the game -->
+        <div id="startScreen">
+            <img class="image" src="image.png" alt=""> <!-- Game intro image -->
+            <br>
+            <br>
+            <h1 class ="animated">Welcome to <br> Typing Wizard!</h1> <!-- Game title with animation -->
+            <br>
+            <br>
+            <button id="startButton">Start Game</button> <!-- Button to start the game -->
+        </div>
+    </div>> <!-- Closes game container -->
+    <audio id="bgMusic" src="song.mp3" preload="auto"></audio> <!-- Background music for the game --> 
+    <script src="script.js"></script> <!-- Main JavaScript file for game logic -->
+</body>
+</html>
+

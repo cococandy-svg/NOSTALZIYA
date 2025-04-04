@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brick Breaker Game</title>
+    <link rel="stylesheet" href="wallbreaker.css">
+</head>
+<body>
+    <h1>Brick Breaker Game</h1>
+    <p>Score: <span id="score">0</span></p>
+    
+    <canvas id="gameCanvas" width="480" height="320"></canvas>
+
+    <div class="controls">
+        <button id="startButton">▶ Start</button>
+        <button id="stopButton">⏸ Stop</button>
+        <button id="restartButton">🔄 Restart</button>
+    </div>
+
+    <label for="speedSelect">Speed:</label>
+    <select id="speedSelect">
+        <option value="slow">Slow</option>
+        <option value="medium" selected>Medium</option>
+        <option value="fast">Fast</option>
+    </select>
+
+    <!-- Audio -->
+    <audio id="bgMusic" src="bg-music.mp3" loop></audio>
+    <audio id="hitSound" src="hit-sound.mp3"></audio>
+
+    <script src="wallbreaker.js"></script>
+</body>
+</html>

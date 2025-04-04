@@ -1,0 +1,207 @@
+* { /* Universal Reset */
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { /* Body Styling  */
+    font-family: Arial, sans-serif; 
+    background: #001f3f;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+#gameTitle { /* Game Title Styling */
+    text-align: center; 
+    font-size: 32px; 
+    margin-top: 20px; 
+    color: black; 
+}
+
+#gameContainer { /* Game Container Styling */
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100vw; 
+    height: 100vh; 
+    background: linear-gradient(to bottom, #004080, #001f3f); 
+    overflow: hidden; 
+}
+
+.wave { position: absolute; /* Creates a dynamic wave effect */
+    width: 200%; 
+    height: 100%; 
+    background: radial-gradient(circle, #ffffff20, #001f3f00); 
+    border-radius: 43%; 
+    animation: wave 8s infinite ease-in-out; 
+    filter: blur(12px); 
+}
+
+/* Secondary wave with delay and reduced opacity */
+.wave:nth-child(2) { 
+    animation-delay: -4s; 
+    opacity: 0.5; 
+}
+
+@keyframes wave { /* Wave animation keyframes */
+    0% { 
+        transform: translateX(-50%) translateY(0); 
+    } 
+    50% { 
+        transform: translateX(-50%) translateY(-20%); 
+    }
+    100% { 
+        transform: translateX(-50%) translateY(0); 
+    }
+}
+
+/* Words styling for falling words */
+.word { 
+    position: absolute; 
+    font-size: 20px; 
+    font-weight: bold; 
+    color: #00e6e6; 
+    border: 2px solid #00e6e6; 
+    padding: 5px; 
+    border-radius: 10px; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    box-shadow: 0px 0px 8px #00e6e6; 
+    animation: float 5s infinite alternate ease-in-out; 
+}
+
+@keyframes float { /* Floating effect for words */
+    0% { 
+        transform: translateY(0px) rotate(0deg); 
+    } 
+    100% { 
+        transform: translateY(-20px) rotate(5deg); 
+    }
+}
+
+.hidden { 
+    display: none; /* Hides elements from view */
+}
+
+#score { /* Score display styling */
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+    font-size: 20px; 
+    color: #ffffff; 
+}
+
+#missed {
+    position: absolute; 
+    top: 40px; 
+    left: 10px; 
+    font-size: 20px; 
+    color: #ffffff; 
+}
+
+#highScore { /* High Score display styling */
+    position: absolute; 
+    top: 10px; 
+    right: 10px; 
+    font-size: 20px; 
+    color: #ffffff; 
+}
+
+#highScoreOver {
+    font-size: 24px;
+    color: gold;
+    text-shadow: 0 0 5px #fff;
+    margin-bottom: 15px;
+}
+
+#gameOver { /* Game Over screen styling */
+    text-transform: uppercase;
+    position: absolute; 
+    top: 40%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    font-size: 50px; 
+    text-align: center; 
+    color: red; 
+    text-shadow: #ff3333 0px 0px 10px;
+}
+
+/*#restartButton { /* Restart button styling */
+/*    color: seagreen;
+    padding: 10px; 
+    font-size: 16px; 
+    margin-top: 10px; 
+}*/
+
+/*#restartButton:hover { /*hover styling*/
+/*    color: #220ce7; 
+    cursor: pointer; 
+}*/
+
+#startScreen { 
+    position: absolute; 
+    top: 40%; 
+    left: 50%; transform: translate(-50%, -50%); 
+    text-align: center; 
+}
+
+/*#startButton { 
+    padding: 10px; 
+    font-size: 18px; 
+}
+
+#startButton:hover {  
+    color: #001f3f; 
+    cursor: pointer; 
+}*/
+
+#startButton, #restartButton {
+    padding: 12px 24px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #00e6e6;
+    background: transparent;
+    border: 2px solid #00e6e6;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00e6e6, 0 0 20px #0072ff;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+/* Hover effect for both buttons */
+#startButton:hover, #restartButton:hover {
+    background-color: #00e6e6;
+    color: #001f3f;
+    box-shadow: 0 0 20px #00e6e6, 0 0 30px #0072ff;
+    transform: scale(1.05);
+}
+
+.animated{ /* Pulsating effect for animated elements */
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    animation: magicEffect 3s ease-in-out infinite;
+    text-shadow: 0px 0px 8px #00c6ff, 0px 0px 15px #0072ff;
+}
+
+@keyframes magicEffect { /* Magic effect keyframes */
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+        text-shadow: 0px 0px 8px #00c6ff;
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+        text-shadow: 0px 0px 20px #0072ff, 0px 0px 30px #00c6ff;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+        text-shadow: 0px 0px 8px #00c6ff;
+    }
+}
+
+.image{ /* Circular image styling */
+    clip-path: circle(50% at 50% 50%);
+}
